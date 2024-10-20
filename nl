@@ -3,7 +3,9 @@ if game.CoreGui:FindFirstChild("Neverlose1") then
 end
 
 for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
-    v:Disable()
+    if typeof(v.Disable) == "function" then
+        v:Disable()
+    end
 end
 
 local Neverlose_Main = {
